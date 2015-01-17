@@ -1,0 +1,277 @@
+.spacer {
+
+    margin-bottom: 5px;
+}
+
+#addInfoCloseButton{
+    position: absolute;
+    left: 1220px;
+    color: lightgrey;
+    padding-top: 10px;
+    font: 12px sans-serif;
+
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+#addInfos {
+    display: none;
+    font: 16px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    width: 1240px;
+    height: 260px;
+    margin-bottom: 10px;
+    margin-top: 110px;
+}
+
+table {
+    font: 14px sans-serif;
+    color: darkgreen;
+}
+
+.pubItem {
+    font: 12px sans-serif;
+    color: #000000;
+}
+
+#currentAuthor {
+    font: 14px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    height: 130px;
+    margin-bottom: 10px;
+}
+
+#cloudBox {
+    float: left;
+    width: 500px;
+    height: calc(100% - 31px);
+
+}
+
+.centerText {
+    text-align: center;
+    font: 14px sans-serif;
+    /*height: 20px;*/
+
+}
+svg {
+    border-color: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+
+}
+
+#pubBox {
+    float: left;
+    margin-left: 50px;
+    width: calc(100% - 550px);
+
+}
+
+#pubs {
+    border-color: lightgrey;
+    border-width: 1px;
+    border-style: solid;
+    max-height: 300px;
+    /*make it scrollable*/
+    overflow: auto;
+    height: 300px;
+}
+
+#wordcloudLoading {
+    display: none;
+    color: darkgreen;
+    background-color: #ffffff;
+
+    position: absolute;
+
+}
+
+/*MARIUS STUFF:*/
+
+.checkboxes {
+
+    float: left;
+}
+
+.top_bar {
+    display: block;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-shadow: 0 1px 2px rgba(213, 42, 42, 0.05);
+    min-width: 1240px;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    float: right;
+}
+
+.top_bar #tags {
+    float: left;
+    left: 0px;
+    width: 600px;
+    margin-left: 45px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.top_bar #type {
+    float: left;
+    width: 270px;
+    margin-left: 45px;
+    margin-top: 0px;
+    left: 0px;
+    margin-bottom: 15px;
+
+}
+
+.top_bar #time {
+    float: left;
+    width: 300px;
+    margin-left: 45px;
+    margin-top: 0px;
+    left: 0px;
+    margin-bottom: 15px;
+
+}
+
+#type label {
+    font: 14px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.chart {
+    margin-top: 100px;
+}
+
+p {
+    font: 14px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    position: relative;
+    white-space: nowrap;
+}
+
+/*END*/
+
+bar div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: black;
+}
+
+p {
+    font: 14px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+text {
+    font: 14px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+settings {
+    font: 16px sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.tagit-label, .ui-menu-item {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.tagit-choice {
+    background-color: black;
+
+}
+
+li {
+    color: #FF0000;
+}
+
+#data-field {
+    height: 30px;
+    padding-right: 20px;
+}
+
+.bar {
+    width: 30px;
+    margin-right: 20px;
+    background-color: #F4F5F7;
+    border: 1px solid #C5C5C5;
+    float: left;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis .minor line {
+    stroke: #777;
+    stroke-dasharray: 2, 2;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+#slider {
+    max-width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.noUi-base {
+    background: #ffffff;
+}
+
+.noUi-connect {
+    background: #f0f0f0;
+}

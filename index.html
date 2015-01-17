@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <title>PubDB Visualization</title>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://www.tutorialrepublic.com/examples/js/typeahead.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"
+            charset="utf-8"></script>
+    <script type="text/javascript" src="http://aehlke.github.io/tag-it/js/tag-it.js"></script>
+    <script type="text/javascript" src="jquery.nouislider.min.js"></script>
+    <script type="text/javascript" src="d3.layout.cloud.js"></script>
+    <script type="text/javascript" src="pubdbScript.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="typeAheadStyle.css">
+    <link rel="stylesheet" type="text/css" href="jquery.tagit.css">
+    <link rel="stylesheet" type="text/css" href="tagit.ui-zendesk.css">
+    <link rel="stylesheet" type="text/css" href="jquery.nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="pubdbStyle.css">
+
+</head>
+<body>
+
+<div class="top_bar">
+    <div id="tags">
+        <p style="font-weight:400; font-size: 14px">Authors</p>
+
+        <form>
+            <p></p>
+            <ul id="allowSpacesTags" class="tagit ui-widget ui-widget-content ui-corner-all">
+            </ul>
+        </form>
+    </div>
+    <div id="type">
+        <p style="font-weight:400; font-size: 14px; float: left">Publication-Type</p>
+
+        <div class="checkboxes">
+            <div><label><input type="checkbox" name="pub_type" value="conference" checked="checked">Conference
+                <div style="background-color: darkred; width: 13px; height:13px; display:inline; margin-left: 44px; margin-top: 4px; position: absolute"></div>
+                </input></label>
+                <label><input type="checkbox" name="pub_type" value="workshop" checked="checked"
+                              style="display:inline; margin-left:80px;">Workshop
+                    <div style="background-color: orange; width: 13px; height:13px; display:inline; margin-left: 2px; margin-top: 4px; position: absolute"></div>
+                    </input></label>
+            </div>
+            <div>
+                <label><input type="checkbox" name="pub_type" value="proceedings-book" checked="checked">Proceedings-Book
+                    <div style="background-color: darkgreen; width: 13px; height:13px; display:inline; margin-left: 2px; margin-top: 4px; position: absolute"></div>
+                    </input></label>
+                <label><input type="checkbox" name="pub_type" value="journal" checked="checked"
+                              style="margin-left:38px;">Journal
+                    <div style="background-color: steelblue; width: 13px; height:13px; display:inline; margin-left: 23px; margin-top: 4px; position: absolute"></div>
+                    </input></label>
+            </div>
+        </div>
+    </div>
+    <div id="time">
+        <p style="font-weight:400; font-size: 14px; float: left; display:inline;">Time Period</p>
+
+        <p id="current-time" style="font-weight:400; font-size: 14px; float: right; display:inline;"></p>
+
+        <div>
+            <div id="slider" style="margin-top: 40px;"></div>
+            <p id="slider-margin-value-min" style="float: left; font-size: 12px; margin-top: -10px"></p>
+
+            <p id="slider-margin-value-max" style="float: right; font-size: 12px; margin-top: -10px"></p>
+        </div>
+    </div>
+</div>
+<div id="wordcloudLoading">Generating keyword-cloud and publication list...</div>
+<div id="addInfos">
+    <a id="addInfoCloseButton" title="button">[hide]</a>
+
+    <div><b id="currentAuthor">Author: all authors</b></div>
+    <div id="cloudBox">
+        <div class="centerText"></div>
+        <div id="vis">
+
+        </div>
+    </div>
+    <div id="pubBox">
+        <div class="centerText"></div>
+        <div id="pubs">
+            <table id="pubTable"></table>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="cloud.js"></script>
+
+<div class="chart">
+    <svg>
+        <defs>
+            <filter xmlns="http://www.w3.org/2000/svg" id="dropshadow" height="130%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+                <feOffset dx="2" dy="4" result="offsetblur"/>
+                <feComponentTransfer>
+                    <feFuncA type="linear" slope="0.6"/>
+                </feComponentTransfer>
+                <feMerge>
+                    <feMergeNode/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+
+        <ellipse cx="55" cy="60" rx="25" ry="15"
+                 style="stroke: none; fill: #0000ff; filter: url(#blurFilter2);"/>
+        <g class="pub">
+            <text x="1111" y="42" style="font-weight: 400">Publications</text>
+        </g>
+        <g class="values"></g>
+        <g class="labels"></g>
+        <g class="bars"></g>
+    </svg>
+
+</div>
+
+</body>
